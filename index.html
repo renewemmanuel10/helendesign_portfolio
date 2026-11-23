@@ -37,6 +37,37 @@
       ::-webkit-scrollbar {
         display: none;
       }
+      .men-beads-track {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .men-beads-track::-webkit-scrollbar {
+        display: none;
+      }
+      .men-beads-card {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+      }
+      @media (min-width: 768px) {
+        .men-beads-card {
+          flex-basis: calc((100% - 1.5rem) / 2);
+        }
+      }
+      @media (min-width: 1024px) {
+        .men-beads-card {
+          flex-basis: calc((100% - 3rem) / 3);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .men-beads-track {
+          scroll-behavior: auto;
+        }
+      }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script id="tailwind-config">
@@ -1072,7 +1103,368 @@
           </div>
         </section>
 
-        
+        <section
+          aria-label="Men's bead designs"
+          aria-roledescription="carousel"
+          class="w-full bg-surface-container-low py-20 lg:py-28"
+          id="men-bead-designs"
+        >
+          <div
+            class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin"
+          >
+            <div
+              class="mb-10 flex flex-col gap-6 md:mb-12 md:flex-row md:items-end md:justify-between"
+            >
+              <div class="max-w-2xl">
+                <span
+                  class="mb-3 block font-label-caps text-label-caps uppercase tracking-[0.25em] text-primary"
+                  >Designed for him</span
+                >
+                <h2
+                  class="mb-4 font-headline-lg text-headline-lg text-on-surface"
+                >
+                  Men's Bead Designs
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Discover statement necklaces, bracelets, and coordinated
+                  bead sets styled for a polished finish.
+                </p>
+              </div>
+              <div class="flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  class="mr-2 font-label-sm text-label-sm text-on-surface-variant"
+                  data-carousel-counter
+                  >01 / 07</span
+                >
+                <button
+                  aria-label="Previous bead designs"
+                  aria-controls="men-beads-track"
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-outline-variant bg-surface text-on-surface transition-colors hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  data-carousel-previous
+                  type="button"
+                >
+                  <span aria-hidden="true" class="material-symbols-outlined"
+                    >arrow_back</span
+                  >
+                </button>
+                <button
+                  aria-label="Next bead designs"
+                  aria-controls="men-beads-track"
+                  class="flex h-11 w-11 items-center justify-center rounded-full border border-outline-variant bg-surface text-on-surface transition-colors hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  data-carousel-next
+                  type="button"
+                >
+                  <span aria-hidden="true" class="material-symbols-outlined"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+            </div>
+            <div
+              aria-label="Men's bead designs"
+              class="men-beads-track"
+              data-carousel-track
+              id="men-beads-track"
+              tabindex="0"
+            >
+              <article
+                aria-label="1 of 7"
+                aria-roledescription="slide"
+                class="men-beads-card group flex flex-col overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-lowest shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+                role="group"
+              >
+                <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                  <img
+                    alt="Man in a green traditional outfit wearing a black bead necklace and bracelet"
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    src="./image/men_1.jpg"
+                  />
+                  <span
+                    class="absolute left-4 top-4 rounded-full bg-surface/90 px-3 py-1 font-label-caps text-label-caps uppercase text-primary backdrop-blur-sm"
+                    >Necklace &amp; bracelet</span
+                  >
+                </div>
+                <div class="flex flex-1 flex-col p-5 md:p-6">
+                  <p
+                    class="mb-2 font-label-caps text-label-caps uppercase tracking-[0.15em] text-primary"
+                  >
+                    Design 01
+                  </p>
+                  <h3 class="mb-2 font-headline-sm text-headline-sm text-on-surface">
+                    The Classic Onyx Set
+                  </h3>
+                  <p
+                    class="mb-6 flex-1 font-body-sm text-body-sm text-on-surface-variant"
+                  >
+                    A coordinated black-bead necklace and bracelet styled with
+                    traditional attire.
+                  </p>
+                  <a
+                    class="inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-5 py-2 font-label-caps text-label-caps uppercase text-primary transition-colors hover:bg-primary hover:text-on-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    href="https://wa.me/239131386416?text=Hi%2C%20I%27m%20interested%20in%20The%20Classic%20Onyx%20Set."
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Ask about this design</a
+                  >
+                </div>
+              </article>
+              <article
+                aria-label="2 of 7"
+                aria-roledescription="slide"
+                class="men-beads-card group flex flex-col overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-lowest shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+                role="group"
+              >
+                <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                  <img
+                    alt="Black and gold bead necklace and bracelet styled on a green outfit"
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    src="./image/men_2.jpg"
+                  />
+                  <span
+                    class="absolute left-4 top-4 rounded-full bg-surface/90 px-3 py-1 font-label-caps text-label-caps uppercase text-primary backdrop-blur-sm"
+                    >Black &amp; gold</span
+                  >
+                </div>
+                <div class="flex flex-1 flex-col p-5 md:p-6">
+                  <p
+                    class="mb-2 font-label-caps text-label-caps uppercase tracking-[0.15em] text-primary"
+                  >
+                    Design 02
+                  </p>
+                  <h3 class="mb-2 font-headline-sm text-headline-sm text-on-surface">
+                    Black &amp; Gold Bead Set
+                  </h3>
+                  <p
+                    class="mb-6 flex-1 font-body-sm text-body-sm text-on-surface-variant"
+                  >
+                    A layered black-bead look with gold-tone accents and a
+                    matching bracelet.
+                  </p>
+                  <a
+                    class="inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-5 py-2 font-label-caps text-label-caps uppercase text-primary transition-colors hover:bg-primary hover:text-on-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    href="https://wa.me/239131386416?text=Hi%2C%20I%27m%20interested%20in%20the%20Black%20and%20Gold%20Bead%20Set."
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Ask about this design</a
+                  >
+                </div>
+              </article>
+              <article
+                aria-label="3 of 7"
+                aria-roledescription="slide"
+                class="men-beads-card group flex flex-col overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-lowest shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+                role="group"
+              >
+                <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                  <img
+                    alt="Two coordinated bead necklace looks styled with cream and burgundy outfits"
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    src="./image/men_3.jpg"
+                  />
+                  <span
+                    class="absolute left-4 top-4 rounded-full bg-surface/90 px-3 py-1 font-label-caps text-label-caps uppercase text-primary backdrop-blur-sm"
+                    >Two style options</span
+                  >
+                </div>
+                <div class="flex flex-1 flex-col p-5 md:p-6">
+                  <p
+                    class="mb-2 font-label-caps text-label-caps uppercase tracking-[0.15em] text-primary"
+                  >
+                    Design 03
+                  </p>
+                  <h3 class="mb-2 font-headline-sm text-headline-sm text-on-surface">
+                    The Heritage Duo
+                  </h3>
+                  <p
+                    class="mb-6 flex-1 font-body-sm text-body-sm text-on-surface-variant"
+                  >
+                    Compare two polished traditional looks featuring
+                    coordinated black-bead accessories.
+                  </p>
+                  <a
+                    class="inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-5 py-2 font-label-caps text-label-caps uppercase text-primary transition-colors hover:bg-primary hover:text-on-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    href="https://wa.me/239131386416?text=Hi%2C%20I%27m%20interested%20in%20The%20Heritage%20Duo."
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Ask about this design</a
+                  >
+                </div>
+              </article>
+              <article
+                aria-label="4 of 7"
+                aria-roledescription="slide"
+                class="men-beads-card group flex flex-col overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-lowest shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+                role="group"
+              >
+                <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                  <img
+                    alt="Black bead necklace with a gold-tone pendant displayed on green grass"
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    src="./image/men_4.jpg"
+                  />
+                  <span
+                    class="absolute left-4 top-4 rounded-full bg-surface/90 px-3 py-1 font-label-caps text-label-caps uppercase text-primary backdrop-blur-sm"
+                    >Pendant necklace</span
+                  >
+                </div>
+                <div class="flex flex-1 flex-col p-5 md:p-6">
+                  <p
+                    class="mb-2 font-label-caps text-label-caps uppercase tracking-[0.15em] text-primary"
+                  >
+                    Design 04
+                  </p>
+                  <h3 class="mb-2 font-headline-sm text-headline-sm text-on-surface">
+                    Gold Pendant Statement
+                  </h3>
+                  <p
+                    class="mb-6 flex-1 font-body-sm text-body-sm text-on-surface-variant"
+                  >
+                    A textured black-bead strand finished with a standout
+                    gold-tone pendant.
+                  </p>
+                  <a
+                    class="inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-5 py-2 font-label-caps text-label-caps uppercase text-primary transition-colors hover:bg-primary hover:text-on-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    href="https://wa.me/239131386416?text=Hi%2C%20I%27m%20interested%20in%20the%20Gold%20Pendant%20Statement."
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Ask about this design</a
+                  >
+                </div>
+              </article>
+              <article
+                aria-label="5 of 7"
+                aria-roledescription="slide"
+                class="men-beads-card group flex flex-col overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-lowest shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+                role="group"
+              >
+                <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                  <img
+                    alt="Layered black bead necklace displayed on a dark mannequin"
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    src="./image/men_5.jpg"
+                  />
+                  <span
+                    class="absolute left-4 top-4 rounded-full bg-surface/90 px-3 py-1 font-label-caps text-label-caps uppercase text-primary backdrop-blur-sm"
+                    >Layered necklace</span
+                  >
+                </div>
+                <div class="flex flex-1 flex-col p-5 md:p-6">
+                  <p
+                    class="mb-2 font-label-caps text-label-caps uppercase tracking-[0.15em] text-primary"
+                  >
+                    Design 05
+                  </p>
+                  <h3 class="mb-2 font-headline-sm text-headline-sm text-on-surface">
+                    Layered Onyx Necklace
+                  </h3>
+                  <p
+                    class="mb-6 flex-1 font-body-sm text-body-sm text-on-surface-variant"
+                  >
+                    A sleek, layered black-bead necklace presented in a classic
+                    display style.
+                  </p>
+                  <a
+                    class="inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-5 py-2 font-label-caps text-label-caps uppercase text-primary transition-colors hover:bg-primary hover:text-on-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    href="https://wa.me/239131386416?text=Hi%2C%20I%27m%20interested%20in%20the%20Layered%20Onyx%20Necklace."
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Ask about this design</a
+                  >
+                </div>
+              </article>
+              <article
+                aria-label="6 of 7"
+                aria-roledescription="slide"
+                class="men-beads-card group flex flex-col overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-lowest shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+                role="group"
+              >
+                <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                  <img
+                    alt="Black bead necklace and matching bracelet displayed on a yellow bust"
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    src="./image/men_6.jpg"
+                  />
+                  <span
+                    class="absolute left-4 top-4 rounded-full bg-surface/90 px-3 py-1 font-label-caps text-label-caps uppercase text-primary backdrop-blur-sm"
+                    >Matching set</span
+                  >
+                </div>
+                <div class="flex flex-1 flex-col p-5 md:p-6">
+                  <p
+                    class="mb-2 font-label-caps text-label-caps uppercase tracking-[0.15em] text-primary"
+                  >
+                    Design 06
+                  </p>
+                  <h3 class="mb-2 font-headline-sm text-headline-sm text-on-surface">
+                    Onyx Necklace &amp; Bracelet
+                  </h3>
+                  <p
+                    class="mb-6 flex-1 font-body-sm text-body-sm text-on-surface-variant"
+                  >
+                    A coordinated necklace and bracelet styled together for a
+                    complete look.
+                  </p>
+                  <a
+                    class="inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-5 py-2 font-label-caps text-label-caps uppercase text-primary transition-colors hover:bg-primary hover:text-on-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    href="https://wa.me/239131386416?text=Hi%2C%20I%27m%20interested%20in%20the%20Onyx%20Necklace%20and%20Bracelet."
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Ask about this design</a
+                  >
+                </div>
+              </article>
+              <article
+                aria-label="7 of 7"
+                aria-roledescription="slide"
+                class="men-beads-card group flex flex-col overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-lowest shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+                role="group"
+              >
+                <div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+                  <img
+                    alt="Black bead necklace and matching bracelet displayed on a red bust"
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    src="./image/men_7.jpg"
+                  />
+                  <span
+                    class="absolute left-4 top-4 rounded-full bg-surface/90 px-3 py-1 font-label-caps text-label-caps uppercase text-primary backdrop-blur-sm"
+                    >Necklace &amp; bracelet</span
+                  >
+                </div>
+                <div class="flex flex-1 flex-col p-5 md:p-6">
+                  <p
+                    class="mb-2 font-label-caps text-label-caps uppercase tracking-[0.15em] text-primary"
+                  >
+                    Design 07
+                  </p>
+                  <h3 class="mb-2 font-headline-sm text-headline-sm text-on-surface">
+                    The Red Velvet Set
+                  </h3>
+                  <p
+                    class="mb-6 flex-1 font-body-sm text-body-sm text-on-surface-variant"
+                  >
+                    A bold black-bead necklace and bracelet presented against
+                    rich red velvet.
+                  </p>
+                  <a
+                    class="inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-5 py-2 font-label-caps text-label-caps uppercase text-primary transition-colors hover:bg-primary hover:text-on-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    href="https://wa.me/239131386416?text=Hi%2C%20I%27m%20interested%20in%20The%20Red%20Velvet%20Set."
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >Ask about this design</a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
 
         <!-- =========================================================================
        FEATURED HAIRSTYLES SHOWCASE: Editorial Gallery
@@ -2004,6 +2396,107 @@
                 "px-5 py-2 rounded-full bg-inverse-surface text-surface text-label-caps font-label-caps uppercase transition-colors";
             });
           });
+
+          const carousel = document.querySelector("#men-bead-designs");
+          if (carousel) {
+            const track = carousel.querySelector("[data-carousel-track]");
+            const previousButton = carousel.querySelector(
+              "[data-carousel-previous]",
+            );
+            const nextButton = carousel.querySelector("[data-carousel-next]");
+            const counter = carousel.querySelector("[data-carousel-counter]");
+            const cards = Array.from(track.children);
+            const reducedMotion = window.matchMedia(
+              "(prefers-reduced-motion: reduce)",
+            );
+            let autoplayTimer;
+            let isHovered = false;
+            let hasFocus = false;
+
+            const getStep = () => {
+              const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+              return cards[0].getBoundingClientRect().width + gap;
+            };
+
+            const updateCounter = () => {
+              const step = getStep();
+              if (!step) return;
+              const maxIndex = Math.round(
+                (track.scrollWidth - track.clientWidth) / step,
+              );
+              const currentIndex = Math.min(
+                maxIndex,
+                Math.round(track.scrollLeft / step),
+              );
+              counter.textContent = `${String(currentIndex + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
+            };
+
+            const moveCarousel = (direction) => {
+              const step = getStep();
+              const maxScroll = track.scrollWidth - track.clientWidth;
+              if (!step || maxScroll <= 0) return;
+              const target = track.scrollLeft + step * direction;
+              let left = target;
+
+              if (direction > 0 && target >= maxScroll - 1) {
+                left = 0;
+              } else if (direction < 0 && target <= 1) {
+                left = maxScroll;
+              } else {
+                left = Math.max(0, Math.min(maxScroll, target));
+              }
+
+              track.scrollTo({
+                left,
+                behavior: reducedMotion.matches ? "auto" : "smooth",
+              });
+            };
+
+            const stopAutoplay = () => window.clearInterval(autoplayTimer);
+            const startAutoplay = () => {
+              stopAutoplay();
+              if (
+                reducedMotion.matches ||
+                isHovered ||
+                hasFocus ||
+                document.hidden
+              ) {
+                return;
+              }
+              autoplayTimer = window.setInterval(() => {
+                moveCarousel(1);
+              }, 4500);
+            };
+
+            previousButton.addEventListener("click", () =>
+              moveCarousel(-1),
+            );
+            nextButton.addEventListener("click", () => moveCarousel(1));
+            track.addEventListener("scroll", updateCounter, { passive: true });
+            carousel.addEventListener("mouseenter", () => {
+              isHovered = true;
+              stopAutoplay();
+            });
+            carousel.addEventListener("mouseleave", () => {
+              isHovered = false;
+              startAutoplay();
+            });
+            carousel.addEventListener("focusin", () => {
+              hasFocus = true;
+              stopAutoplay();
+            });
+            carousel.addEventListener("focusout", (event) => {
+              if (!carousel.contains(event.relatedTarget)) {
+                hasFocus = false;
+                startAutoplay();
+              }
+            });
+            document.addEventListener("visibilitychange", startAutoplay);
+            reducedMotion.addEventListener("change", startAutoplay);
+            window.addEventListener("resize", updateCounter);
+            updateCounter();
+            startAutoplay();
+          }
         });
       </script>
     </main>
