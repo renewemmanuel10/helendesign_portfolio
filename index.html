@@ -64,6 +64,37 @@
           flex-basis: calc((100% - 3rem) / 3);
         }
       }
+      @media (max-width: 639px) {
+        [class~="text-headline-xl"] {
+          font-size: clamp(2rem, 9vw, 2.75rem) !important;
+          line-height: 1.12 !important;
+        }
+        [class~="text-headline-lg"] {
+          font-size: clamp(1.625rem, 7vw, 2rem) !important;
+          line-height: 1.2 !important;
+        }
+        [class~="text-headline-md"] {
+          font-size: 1.5rem !important;
+          line-height: 1.25 !important;
+        }
+        [class~="text-headline-sm"] {
+          font-size: 1.25rem !important;
+          line-height: 1.35 !important;
+        }
+        [class~="text-subhead-lg"] {
+          font-size: 1.125rem !important;
+          line-height: 1.5 !important;
+        }
+        [class~="text-[20px]"] {
+          font-size: 1.125rem !important;
+        }
+        [class~="aspect-[3/4]"] {
+          aspect-ratio: 1 / 1 !important;
+        }
+        [class~="aspect-[4/3]"] {
+          aspect-ratio: 16 / 10 !important;
+        }
+      }
       @media (prefers-reduced-motion: reduce) {
         .men-beads-track {
           scroll-behavior: auto;
