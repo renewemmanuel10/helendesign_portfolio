@@ -1,3 +1,44 @@
+
+  // 1) Brand name: letters sharpen in one after another
+  const brand = document.getElementById('brand');
+  if (brand) {
+    [...'ELIANA'].forEach((ch, i) => {
+      const s = document.createElement('span');
+      s.className = 'letter';
+      s.textContent = ch;
+      s.style.animationDelay = (0.3 + i * 0.1) + 's';
+      brand.appendChild(s);
+    });
+  }
+
+  // 2) Typewriter cycling through the products
+  const phrases = ['lip gloss.', 'beaded jewelry.', 'waist beads.', 'hair accessories.'];
+  const typed = document.getElementById('typed');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (typed) {
+    if (reduced) {
+      typed.textContent = phrases[0];
+    } else {
+      let p = 0, c = 0, deleting = false;
+      const tick = () => {
+        const word = phrases[p];
+        c += deleting ? -1 : 1;
+        typed.textContent = word.slice(0, c);
+        let delay = deleting ? 45 : 90;
+        if (!deleting && c === word.length) { delay = 1700; deleting = true; }
+        else if (deleting && c === 0) { deleting = false; p = (p + 1) % phrases.length; delay = 350; }
+        setTimeout(tick, delay);
+      };
+      setTimeout(tick, 2300);
+    }
+  }
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll("#gallery-filters button");
   filterButtons.forEach((button) => {
